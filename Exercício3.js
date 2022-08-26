@@ -1,15 +1,26 @@
-let notaAluno = 40
+const nota = document.getElementById("nota");
+const notaFinal = document.getElementById("notaFinal");
+const result = document.getElementById("result");
+const btn = document.querySelector("#verif")
+const campoNota = document.getElementById("campoax2")
 
-if (Number.isInteger(notaAluno / 5)) {
-  console.log("Aprovado! Nota: " + notaAluno)
-} else {
+// Cálculo
+
+btn.onclick = () => {
+	if (nota.value == ""){
+  	nota.focus();
   
-  if (notaAluno < 38){
-    console.log("Reprovado! Nota: " + notaAluno)
   } else {
-    let notaArredondada = Math.round(notaAluno / 5) * 5
-    console.log("Aprovado! Nota: " + notaArredondada)
-    
-  }
   
-}
+   if (nota.value < 38){
+   result.value = "Reprovado!";
+   notaFinal.value = nota.value
+   
+  } else {
+    
+  notaFinal.value = Math.round(nota.value / 5) * 5
+  result.value = "Aprovado!"
+  
+ }
+ }
+ }
